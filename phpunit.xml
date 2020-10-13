@@ -4,6 +4,7 @@
   xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.4/phpunit.xsd"
   bootstrap="src/bootstrap.php"
   colors="true"
+  backupGlobals="true"
   >
   <php>
       <ini name="error_reporting" value="E_ALL"/>
@@ -15,7 +16,9 @@
     <include>
       <directory suffix=".php">./src</directory>
     </include>
-    <exclude/>
+    <exclude>
+      <file>./src/bootstrap.php</file>
+    </exclude>
     <report>
       <html outputDirectory="tests/logs/coverage"></html>
     </report>
